@@ -1,1 +1,1 @@
-# metalsmith-jquery
+# metalsmith-cheerio
