@@ -1,0 +1,27 @@
+{
+  "name": "metalsmith-cheerio",
+  "version": "0.0.1",
+  "description": "A Metalsmith plugin to apply jQuery transforms to markdown-rendered HTML",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/manheim/metalsmith-cheerio",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manheim/metalsmith-cheerio"
+  },
+  "bugs": {
+    "url": "https://github.com/manheim/metalsmith-cheerio/issues"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha ./test"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^0.19.0"
+  },
+  "devDependencies": {
+    "debug": "^2.1.3",
+    "metalsmith": "^1.5.0",
+    "metalsmith-markdown": "^0.2.1"
+  }
+}
