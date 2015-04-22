@@ -9,7 +9,7 @@ Leverages [Cheerio](https://github.com/cheeriojs/cheerio) to support a logical s
 
 ## Installation
 
-	$ npm install metalsmith-jquery
+    $ npm install metalsmith-jquery
 
 ## Usage
 
@@ -17,12 +17,12 @@ When your markdown is converted to HTML, it doesn't contain any CSS information.
 
 ```js
 {
-	"plugins": {
-    "metalsmith-markdown": {},
-    "metalsmith-jquery": function($) {
-      $('h2').addClass('welcome');
+    "plugins": {
+        "metalsmith-markdown": {},
+        "metalsmith-jquery": function($) {
+            $('h2').addClass('welcome');
+        }
     }
-	}
 }
 
 ``` 
@@ -31,12 +31,12 @@ For example, if you're using a Bootstrap template, you may want your Markdown-re
 
 ```js
 {
-  "plugins": {
-    "metalsmith-markdown": {},
-    "metalsmith-jquery": function($) {
-      $('table').addClass('table table-bordered');
+    "plugins": {
+        "metalsmith-markdown": {},
+        "metalsmith-jquery": function($) {
+            $('table').addClass('table table-bordered');
+        }
     }
-  }
 }
 
 ``` 
