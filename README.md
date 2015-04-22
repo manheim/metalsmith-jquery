@@ -15,7 +15,7 @@ Leverages [Cheerio](https://github.com/cheeriojs/cheerio) to support a logical s
 
 When your markdown is converted to HTML, it doesn't contain any CSS information.  Use this to add styles to your markdown-generated HTML:
 
-```json
+```js
 {
 	"plugins": {
     "metalsmith-markdown": {},
@@ -29,7 +29,7 @@ When your markdown is converted to HTML, it doesn't contain any CSS information.
 
 For example, if you're using a Bootstrap template, you may want your Markdown-rendered tables to contain the Bootstrap table CSS classes:
 
-```json
+```js
 {
   "plugins": {
     "metalsmith-markdown": {},
