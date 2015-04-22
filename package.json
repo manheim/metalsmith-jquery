@@ -1,7 +1,7 @@
 {
   "name": "metalsmith-jquery",
   "version": "0.0.1",
-  "description": "A Metalsmith plugin to apply jQuery transforms to HTML",
+  "description": "A Metalsmith plugin to manipulate HTML via jQuery syntax",
   "readmeFilename": "README.md",
   "homepage": "https://github.com/manheim/metalsmith-jquery",
   "repository": {
