@@ -9,7 +9,7 @@ describe('metalsmith-jquery', function() {
 	it('should apply changes to HTML', function(done) {
 	  var metalsmith = Metalsmith('test/fixtures/basic');
 	  metalsmith
-	  .use(markdown())
+	    .use(markdown())
       .use(jquery(function($) {
           $('h2').addClass('welcome');
       }))
