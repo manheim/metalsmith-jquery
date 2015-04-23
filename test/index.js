@@ -31,7 +31,10 @@ describe('metalsmith-jquery', function() {
     it('should apply changes to GFM tables', function(done) {
         var metalsmith = Metalsmith('test/fixtures/table');
         metalsmith
-            .use(markdown())
+            .use(markdown({
+                gfm: true,
+                tables: true
+            }))
             .use(jquery(function($) {
                 $('table').addClass('table table-bordered');
             }))
@@ -43,7 +46,7 @@ describe('metalsmith-jquery', function() {
                     $ = cheerio.load(files[file].contents);
                     $('table').each(function() {
                         assert.equal(true,$(this).hasClass('table'));
-                        assert.equal(true,$(this).hasClass('table-bordered'))
+                        assert.equal(true,$(this).hasClass('table-bordered'));
                     });
                 });
                 done();
@@ -64,7 +67,7 @@ describe('metalsmith-jquery', function() {
                     $ = cheerio.load(files[file].contents);
                     $('table').each(function() {
                         assert.equal(true,$(this).hasClass('table'));
-                        assert.equal(true,$(this).hasClass('table-bordered'))
+                        assert.equal(true,$(this).hasClass('table-bordered'));
                     });
                     $('h2').each(function() {
                         assert.equal(true,$(this).hasClass('welcome'));
