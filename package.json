@@ -2,6 +2,15 @@
     "name": "metalsmith-jquery",
     "version": "0.0.1",
     "description": "A Metalsmith plugin to manipulate HTML via jQuery syntax",
+    "keywords": [
+        "metalsmith",
+        "jquery"
+    ],
+    "author": "Manheim <opensource@manheim.com>",
+    "contributors": [{
+        "name": "Paul O'Fallon",
+        "email": "paul@ofallonfamily.com"
+    }],
     "readmeFilename": "README.md",
     "homepage": "https://github.com/manheim/metalsmith-jquery",
     "repository": {
