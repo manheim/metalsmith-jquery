@@ -17,15 +17,18 @@ describe('metalsmith-jquery', function() {
                 if (err) {
                     return(done(err));
                 } else {
+                    var count = 0;
                     Object.keys(files).forEach(function(file) {
-                    $ = cheerio.load(files[file].contents);
-                    $('h2').each(function() {
-                        assert.equal(true,$(this).hasClass('welcome'));
+                        $ = cheerio.load(files[file].contents);
+                        $('h2').each(function() {
+                            assert.equal(true,$(this).hasClass('welcome'));
+                            if ($(this).hasClass('welcome')) { count++; }
+                        });
                     });
-                });
-                done();
-            }
-        });
+                    assert.equal(3,count);
+                    done();
+                }
+            });
     });
 
     it('should apply changes to GFM tables', function(done) {
@@ -43,15 +46,15 @@ describe('metalsmith-jquery', function() {
                     return(done(err));
                 } else {
                     Object.keys(files).forEach(function(file) {
-                    $ = cheerio.load(files[file].contents);
-                    $('table').each(function() {
-                        assert.equal(true,$(this).hasClass('table'));
-                        assert.equal(true,$(this).hasClass('table-bordered'));
+                        $ = cheerio.load(files[file].contents);
+                        $('table').each(function() {
+                            assert.equal(true,$(this).hasClass('table'));
+                            assert.equal(true,$(this).hasClass('table-bordered'));
+                        });
                     });
-                });
-                done();
-            }
-        });
+                    done();
+                }
+            });
     });
 
     it('should read the function from a file', function(done) {
@@ -64,17 +67,18 @@ describe('metalsmith-jquery', function() {
                     return(done(err));
                 } else {
                     Object.keys(files).forEach(function(file) {
-                    $ = cheerio.load(files[file].contents);
-                    $('table').each(function() {
-                        assert.equal(true,$(this).hasClass('table'));
-                        assert.equal(true,$(this).hasClass('table-bordered'));
+                        $ = cheerio.load(files[file].contents);
+                        $('table').each(function() {
+                            assert.equal(true,$(this).hasClass('table'));
+                            assert.equal(true,$(this).hasClass('table-bordered'));
+                        });
+                        $('h2').each(function() {
+                            assert.equal(true,$(this).hasClass('welcome'));
+                        });
                     });
-                    $('h2').each(function() {
-                        assert.equal(true,$(this).hasClass('welcome'));
-                    });
-                });
-                done();
-            }
-        });
+                    done();
+                }
+            });
     });
+    
 });
