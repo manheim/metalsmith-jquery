@@ -1,6 +1,7 @@
 # metalsmith-jquery
 
 [![Build Status](https://travis-ci.org/manheim/metalsmith-jquery.svg?branch=master)](https://travis-ci.org/manheim/metalsmith-jquery)
+[![Code Climate](https://codeclimate.com/github/manheim/metalsmith-jquery/badges/gpa.svg)](https://codeclimate.com/github/manheim/metalsmith-jquery)
 [![Dependency Status](https://www.versioneye.com/user/projects/5539230b1d2989f7ee000002/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5539230b1d2989f7ee000002)
 
 A [Metalsmith](https://github.com/segmentio/metalsmith) plugin to manipulate HTML via jQuery syntax.
