@@ -22,7 +22,7 @@
     },
     "main": "lib/index.js",
     "scripts": {
-        "test": "mocha ./test"
+        "test": "./node_modules/.bin/mocha ./test"
     },
     "license": "MIT",
     "dependencies": {
@@ -31,6 +31,7 @@
     },
     "devDependencies": {
         "metalsmith": "^1.5.0",
-        "metalsmith-markdown": "^0.2.1"
+        "metalsmith-markdown": "^0.2.1",
+        "mocha": "^2.2.5"
     }
 }
