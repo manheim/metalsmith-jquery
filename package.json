@@ -1,6 +1,6 @@
 {
     "name": "metalsmith-jquery",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A Metalsmith plugin to manipulate HTML via jQuery syntax",
     "keywords": [
         "metalsmith",
@@ -26,10 +26,10 @@
     },
     "license": "MIT",
     "dependencies": {
-        "cheerio": "^0.19.0"
+        "cheerio": "^0.19.0",
+        "debug": "^2.1.3"
     },
     "devDependencies": {
-        "debug": "^2.1.3",
         "metalsmith": "^1.5.0",
         "metalsmith-markdown": "^0.2.1"
     }
