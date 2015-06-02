@@ -27,3 +27,6 @@ build/Release
 node_modules
 
 test/fixtures/*/build
+
+# IDE config folders
+.idea
