@@ -20,11 +20,13 @@ Leverages [Cheerio](https://github.com/cheeriojs/cheerio) to support a logical s
 When your markdown is converted to HTML, it doesn't contain any CSS information.  Use this to add styles to your markdown-generated HTML:
 
 ```js
+var jquery = require('metalsmith-jquery');
+
 Metalsmith(__dirname)
     .use(markdown())
     .use(jquery(function($) {
         $('h2').addClass('welcome');
-    })
+    }))
     .use(templates('handlebars'))
     .build(function(err) {
         if (err) throw err;
@@ -34,11 +36,13 @@ Metalsmith(__dirname)
 For example, if you're using a Bootstrap template, you may want your Markdown-rendered tables to contain the Bootstrap table CSS classes:
 
 ```js
+var jquery = require('metalsmith-jquery');
+
 Metalsmith(__dirname)
     .use(markdown())
     .use(jquery(function($) {
         $('table').addClass('table table-bordered');
-    })
+    }))
     .use(templates('handlebars'))
     .build(function(err) {
         if (err) throw err;
