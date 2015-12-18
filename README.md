@@ -49,6 +49,16 @@ Metalsmith(__dirname)
     });
 ``` 
 
+Inside your callback, you can access the metalsmith-metadata, and metalsmith filename
+
+```js
+    .use(jquery(function($, filename, files, metalsmith) {
+        var title = $('h1').first().text()
+        if (title)
+            files[filename].title = title
+    }))
+```
+
 You can also store the javascript in a separate file, which is especially useful if you're managing your Metalsmith configuration in a JSON file:
 
 ```json
