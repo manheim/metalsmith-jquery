@@ -53,9 +53,9 @@ Inside your callback, you can access the metalsmith-metadata, and metalsmith fil
 
 ```js
     .use(jquery(function($, filename, files, metalsmith) {
-        var title = $('h1').first().text()
+        var title = $('h1').first().text();
         if (title)
-            files[filename].title = title
+            files[filename].title = title;
     }))
 ```
 
