@@ -80,5 +80,28 @@ describe('metalsmith-jquery', function() {
                 }
             });
     });
+
+    it('should provide access to the metalsmith metadata', function(done){
+        var metalsmith = Metalsmith('test/fixtures/basic');
+        metalsmith
+            .use(markdown())
+            .use(jquery(function($, filename, files, metalsmith) {
+                // generate a random number, and insert it as h4 and as metalsmith metadata
+                var testData = '' + Math.floor(Math.random() * 9999);
+                $('h3').after('<h4 id="data">' + testData + '</h4>');
+                files[filename]['testData'] = testData;
+            }))
+            .build(function(err, files) {
+                if (err) {
+                    return(done(err));
+                } else {
+                    Object.keys(files).forEach(function(file) {
+                        $ = cheerio.load(files[file].contents);
+                        assert($('h4#data').text(), files[file]['testData']);
+                    });
+                    done();
+                }
+            });
+    });
     
 });
