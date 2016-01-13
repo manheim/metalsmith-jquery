@@ -1,37 +1,34 @@
 {
-    "name": "metalsmith-jquery",
-    "version": "0.1.2",
-    "description": "A Metalsmith plugin to manipulate HTML via jQuery syntax",
-    "keywords": [
-        "metalsmith",
-        "jquery"
-    ],
-    "author": "Manheim <opensource@manheim.com>",
-    "contributors": [{
-        "name": "Paul O'Fallon",
-        "email": "paul@ofallonfamily.com"
-    }],
-    "readmeFilename": "README.md",
-    "homepage": "https://github.com/manheim/metalsmith-jquery",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/manheim/metalsmith-jquery"
-    },
-    "bugs": {
-        "url": "https://github.com/manheim/metalsmith-jquery/issues"
-    },
-    "main": "lib/index.js",
-    "scripts": {
-        "test": "./node_modules/.bin/mocha ./test"
-    },
-    "license": "MIT",
-    "dependencies": {
-        "cheerio": "^0.19.0",
-        "debug": "^2.1.3"
-    },
-    "devDependencies": {
-        "metalsmith": "^1.5.0",
-        "metalsmith-markdown": "^0.2.1",
-        "mocha": "^2.2.5"
-    }
+  "name": "metalsmith-jquery",
+  "version": "0.1.2",
+  "description": "A Metalsmith plugin to manipulate HTML via jQuery syntax",
+  "keywords": [
+    "metalsmith",
+    "jquery"
+  ],
+  "author": "Manheim <opensource@manheim.com>",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/manheim/metalsmith-jquery",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manheim/metalsmith-jquery"
+  },
+  "bugs": {
+    "url": "https://github.com/manheim/metalsmith-jquery/issues"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha ./test"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^0.19.0",
+    "debug": "^2.1.3",
+    "minimatch": "^3.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "metalsmith": "^2.1.0",
+    "metalsmith-markdown": "^0.2.1"
+  }
 }

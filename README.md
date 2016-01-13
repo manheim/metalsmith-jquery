@@ -31,7 +31,7 @@ Metalsmith(__dirname)
     .build(function(err) {
         if (err) throw err;
     });
-``` 
+```
 
 For example, if you're using a Bootstrap template, you may want your Markdown-rendered tables to contain the Bootstrap table CSS classes:
 
@@ -47,7 +47,23 @@ Metalsmith(__dirname)
     .build(function(err) {
         if (err) throw err;
     });
-``` 
+```
+
+If you don't want to process every file, you can include a pattern of files to process:
+
+```js
+var jquery = require('metalsmith-jquery');
+
+Metalsmith(__dirname)
+    .use(markdown())
+    .use(jquery('**/*.html', function($) {
+        $('table').addClass('table table-bordered');
+    }))
+    .use(templates('handlebars'))
+    .build(function(err) {
+        if (err) throw err;
+    });
+```
 
 Inside your callback, you can access the metalsmith-metadata, and metalsmith filename
 
@@ -76,7 +92,7 @@ module.exports = function($) {
 
     $('h2').addClass('welcome');
     $('table').addClass('table table-bordered');
-    
+
 }
 ```
 ... and the path is relative to the current working directory.

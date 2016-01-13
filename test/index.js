@@ -25,7 +25,7 @@ describe('metalsmith-jquery', function() {
                             if ($(this).hasClass('welcome')) { count++; }
                         });
                     });
-                    assert.equal(3,count);
+                    assert.equal(count, 3);
                     done();
                 }
             });
@@ -48,8 +48,8 @@ describe('metalsmith-jquery', function() {
                     Object.keys(files).forEach(function(file) {
                         $ = cheerio.load(files[file].contents);
                         $('table').each(function() {
-                            assert.equal(true,$(this).hasClass('table'));
-                            assert.equal(true,$(this).hasClass('table-bordered'));
+                            assert.equal($(this).hasClass('table'), true);
+                            assert.equal($(this).hasClass('table-bordered'), true);
                         });
                     });
                     done();
@@ -73,7 +73,7 @@ describe('metalsmith-jquery', function() {
                             assert.equal(true,$(this).hasClass('table-bordered'));
                         });
                         $('h2').each(function() {
-                            assert.equal(true,$(this).hasClass('welcome'));
+                            assert.equal($(this).hasClass('welcome'), true);
                         });
                     });
                     done();
@@ -103,5 +103,29 @@ describe('metalsmith-jquery', function() {
                 }
             });
     });
-    
+
+    it('should accept matching criteria for files to process', function(done) {
+        var metalsmith = Metalsmith('test/fixtures/glob');
+        metalsmith
+            .use(markdown())
+            .use(jquery('**/*.html', function($) {
+                $('h2').addClass('welcome');
+            }))
+            .build(function(err, files) {
+                if (err) {
+                    return(done(err));
+                } else {
+                    var count = 0;
+                    Object.keys(files).forEach(function(file) {
+                        $ = cheerio.load(files[file].contents);
+                        $('h2').each(function() {
+                            if ($(this).hasClass('welcome')) { count++; }
+                        });
+                    });
+                    assert.equal(count,3);
+                    done();
+                }
+            });
+    });
+
 });
