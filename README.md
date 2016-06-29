@@ -65,6 +65,22 @@ Metalsmith(__dirname)
     });
 ```
 
+If you want to add specific options to how Cherio should manipulate the generated HTML
+
+```js
+var jquery = require('metalsmith-jquery');
+
+Metalsmith(__dirname)
+    .use(markdown())
+    .use(jquery('**/*.html', function($, {decodeEntities: false}) {
+        $('#content').append("<p>моя бабушка старая</p>"); // cyrillic characters wont be HTML-encoded
+    }))
+    .use(templates('handlebars'))
+    .build(function(err) {
+        if (err) throw err;
+    });
+```
+
 Inside your callback, you can access the metalsmith-metadata, and metalsmith filename
 
 ```js

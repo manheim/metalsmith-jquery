@@ -128,4 +128,33 @@ describe('metalsmith-jquery', function() {
             });
     });
 
+   it('should accept cheerio options', function(done) {
+		var valuetoCheck = 'измененный заголовок',
+			cheerioOptions = {decodeEntities: false};
+        	metalsmith = Metalsmith('test/fixtures/cheerio-options');
+        
+		metalsmith
+            .use(markdown())
+            .use(jquery('**/*.html', function($) {
+                $('h2').html(valuetoCheck);
+            }, cheerioOptions))
+            .build(function(err, files) {
+                if (err) {
+                    return(done(err));
+                } else {
+                    var count = 0;
+                    Object.keys(files).forEach(function(file) {
+                        $ = cheerio.load(files[file].contents, cheerioOptions);
+                        $('h2').each(function() {
+						var headline = $(this).html();
+                            if (headline === valuetoCheck) { count++; }
+                        });
+                    });
+                    assert.equal(count,3);
+                    done();
+                }
+            });
+    });
+
+
 });
