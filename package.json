@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-jquery",
-  "version": "0.1.2",
+  "version": "0.2.2",
   "description": "A Metalsmith plugin to manipulate HTML via jQuery syntax",
   "keywords": [
     "metalsmith",
